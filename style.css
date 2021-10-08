@@ -1,0 +1,167 @@
+/*=============GERAL===============*/
+@font-face {
+    font-family: clockDigital;
+    src: url(fonts/digital-7-momo.ttf);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(69,86,102,1) 0%, rgba(34,34,34,1) 90% );
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*===========CLOCK ANALOG==============*/
+.clock_container{
+    box-shadow: 3px 3px 10px black;
+    border: 10px solid #212635;
+    border-radius: 50%;
+    width: 310px;
+    height: 310px;
+    background: url(img/clock.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock_container::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 10;
+    
+}
+/*============CONTAINERS==============*/
+.content_hours, .content_minutes, .content_seconds{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+.content_hours{
+    width: 140px;
+    height: 140px;
+}
+.content_minutes{
+    width: 190px;
+    height: 190px;
+}
+.content_seconds{
+    width: 230px;
+    height: 230px;
+    z-index: 12;
+}
+.content_seconds::after{
+    content: '';
+    position:absolute;
+    top: 6.875rem;
+    left: 6.875rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #EF1560;
+    z-index: 11;
+}
+/*==================POINTERS================*/
+.pointer_hours{
+    width: 8px;
+    height:70px;
+    background: white;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: bottom;
+}
+.pointer_minutes{
+    width: 8px;
+    height: 95px;
+    background: white;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: bottom;
+}
+.pointer_seconds{
+    width: 3px;
+    height: 115px;
+    background: #EF1560;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: bottom;
+}
+/*==============BUTTONS===========*/
+.btn_digital{
+    position: relative;
+    top: 60px;
+    width: 150px;
+    height: 50px;
+    background: none;
+    box-shadow: 1px 1px 5px black;
+    border: 10px solid #737373;
+    border-radius: 10px;
+    color: white;
+    font-family: clockDigital;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.btn_digital:hover{
+    box-shadow: 3px 3px 10px black;
+    transform: scale(1.1);
+    color: #b7e568;
+}
+.btn_analog{
+    display: none;
+    position: relative;
+    top: 60px;
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: 10px solid #212635;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5rem;
+    font-family:'Franklin Gothic Medium', sans-serif;
+    cursor: pointer;
+}
+.btn_analog:hover{
+    box-shadow: 3px 3px 10px black;
+    transform: scale(1.1);
+    color: sienna;
+}
+/*==============CLOCK DIGITAL===============*/
+.display_digital{
+    display: none;
+}
+.container_digital{
+    background-image: url(img/clockDigital.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 310px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.clock_digital{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.digital{
+    position: absolute;
+    left: 31px;
+    color: #b7e568;
+    font-family: clockDigital; 
+    font-size: 4.2rem;
+}

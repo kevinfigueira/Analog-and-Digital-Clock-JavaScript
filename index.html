@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Analog Clock</title>
+</head>
+<body>
+    <div class="display_analog" id="display_analog">
+        <div class="clock_container">
+            <div class="content_hours">
+                <div class="pointer_hours"></div>
+            </div>
+    
+            <div class="content_minutes">
+                <div class="pointer_minutes"></div>
+            </div>
+    
+            <div class="content_seconds">
+                <div class="pointer_seconds"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="display_digital" id="display_digital">
+        <div class="container_digital">
+            <div class="clock_digital">
+               <div class="digital" id="digital">--:--:--</div> 
+            </div>
+        </div>
+    </div>
+
+    <button class="btn_digital" id="btn_digital" onclick="changeDigital()">DIGITAL</button>
+    <button class="btn_analog" id="btn_analog" onclick="changeAnalog()">ANALOG</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
